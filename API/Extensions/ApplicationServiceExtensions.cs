@@ -30,7 +30,8 @@ public static class ApplicationServiceExtensions
 
         // Add the token service to the DI container
         services.AddScoped<ITokenService, TokenService>(); // Register the token service with the DI container
-
+        services.AddScoped<IUserRepository, UserRepository>(); // Register the user repository with the DI container
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // Register AutoMapper with the DI container
         return services;
     }
 
